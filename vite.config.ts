@@ -21,4 +21,7 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  server : {
+    allowedHosts: ['3000-codeanywhere-templates-t-up9lha4wgn.app.codeanywhere.com']
+  }
 });
