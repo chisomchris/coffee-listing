@@ -1,7 +1,8 @@
 import { LoaderFunctionArgs, defer } from "@remix-run/node"
 import { Await, isRouteErrorResponse, useLoaderData, useRouteError, useSearchParams } from "@remix-run/react"
 import { Suspense } from "react"
-import { CoffeeCard, CoffeeProps } from "~/components/CoffeeCard"
+import { CoffeeProps } from "~/components/CoffeeCard"
+import { CoffeeList } from "~/components/CoffeeList"
 
 const getCoffeeList = async (): Promise<CoffeeProps[]> => {
     const response = await fetch("https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json")
@@ -59,25 +60,15 @@ export default function Index() {
                 </li>
             </ul>
 
-            <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <Suspense fallback={<div>Loading...</div>}>
-                    <Await resolve={coffeeList} errorElement={<div>Oops!</div>}>
-                        {(coffeeList) => <CoffeeList coffeeList={coffeeList} />}
-                    </Await>
-                </Suspense>
-
-            </ul>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Await resolve={coffeeList} errorElement={<div>Oops!</div>}>
+                    {(coffeeList) => <CoffeeList coffeeList={coffeeList} />}
+                </Await>
+            </Suspense>
 
         </div>
     )
 }
-
-const CoffeeList = ({ coffeeList }: { coffeeList: CoffeeProps[] }) =>
-    coffeeList.map((coffee: CoffeeProps) => (
-        <CoffeeCard key={coffee.id} coffee={coffee} />
-    ))
-
-
 
 export function ErrorBoundary() {
     const error = useRouteError();
