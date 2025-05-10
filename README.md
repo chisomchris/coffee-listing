@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="{https://your-demo-link.your-domain}">
+    <a href="https://coffee-listing-black-nine.vercel.app/">
       Demo
     </a>
     <span> | </span>
@@ -37,7 +37,7 @@
 
 ## Overview
 
-![screenshot](https://github.com/chisomchris/coffee-listing/blob/main/public/bg-cafe-lg.jpg?raw=true)
+![screenshot](https://github.com/chisomchris/coffee-listing/blob/main/coffee-listing.PNG?raw=true)
 
 A simple coffee listing page built with Remix Run.
 

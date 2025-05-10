@@ -47,7 +47,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <footer className="mt-auto pb-4">
           <div className="author-info text-[14px] text-center mt-[16px] text-[rgb(55,65,81)]">
-            Coded by <a href="/">Chisomchris</a> | Challenge by {" "}
+            Coded by <a href="https://github.com/chisomchris" target="_blank" rel="noreferrer">Chisomchris</a> | Challenge by {" "}
             <a href="https://www.devchallenges.io?ref=challenge" target="_blank" rel="noreferrer"
             >devChallenges.io</a
             >.
@@ -65,7 +65,7 @@ export default function App() {
   return <Outlet />;
 }
 
-{/* Root Error Boundary */}
+{/* Root Error Boundary */ }
 export function ErrorBoundary() {
   const error = useRouteError();
   console.error(error);
